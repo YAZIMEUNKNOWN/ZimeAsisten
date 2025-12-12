@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memuat Halaman...</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0d1117;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.loader {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #58a6ff;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="loader">Memuat halaman...</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const page = params.get("go");
+
+if (!page) {
+    document.body.innerHTML = "<h2 style='text-align:center;margin-top:40px;'>Halaman tidak ditemukan.</h2>";
+} else {
+    const iframe = document.createElement("iframe");
+    iframe.src = page;
+    document.body.innerHTML = "";
+    document.body.appendChild(iframe);
+}
+</script>
+
+</body>
+</html>
