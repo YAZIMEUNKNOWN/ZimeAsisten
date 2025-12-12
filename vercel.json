@@ -1,6 +1,6 @@
 {
+  "cleanUrls": false,
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
-  ],
-  "cleanUrls": true
+  ]
 }
